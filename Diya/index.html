@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Diya — With All My Love ❤️</title>
+    <meta name="description" content="A birthday surprise crafted with love for the most special person in my life — Diya.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Canvases -->
+    <canvas id="starsCanvas"></canvas>
+    <canvas id="heartsCanvas"></canvas>
+    <canvas id="ambientCanvas"></canvas>
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- Music Toggle (Fixed) -->
+    <button id="musicToggleBtn" class="music-toggle" title="Toggle Music">
+        <span class="music-icon-off">🎵</span>
+        <span class="music-icon-on hidden">🎶</span>
+        <div class="sound-bars hidden">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </button>
+
+    <!-- Section Progress Dots -->
+    <nav class="progress-dots" id="progressDots">
+        <span class="dot active" data-section="0" title="Start"></span>
+        <span class="dot" data-section="1" title="Today"></span>
+        <span class="dot" data-section="2" title="Story"></span>
+        <span class="dot" data-section="3" title="Love"></span>
+        <span class="dot" data-section="4" title="Letter"></span>
+        <span class="dot" data-section="5" title="Surprise"></span>
+        <span class="dot" data-section="6" title="Future"></span>
+        <span class="dot" data-section="7" title="Wish"></span>
+        <span class="dot" data-section="8" title="Forever"></span>
+    </nav>
+
+    <main class="main-wrapper">
+
+        <!-- ============================================================
+             SECTION 0: THE SURPRISE — OPENING
+        ============================================================ -->
+        <section id="section-0" class="section active-section opening-section">
+            <div class="opening-content">
+                <p class="opening-prelude fade-in-text">For the most special person in my life...</p>
+                <h1 class="opening-name fade-in-text delay-1">
+                    <span class="heart-float">❤️</span> Diya <span class="heart-float">❤️</span>
+                </h1>
+                <p class="opening-sub fade-in-text delay-2">I made something little for you.</p>
+                <div class="opening-divider fade-in-text delay-3"></div>
+                <p class="opening-message fade-in-text delay-3">
+                    It's not just a birthday wish...<br>
+                    It's a collection of a few feelings<br>
+                    that I don't always know how to say.
+                </p>
+                <button id="openSurpriseBtn" class="btn-romantic fade-in-text delay-4">
+                    <span class="btn-sparkle">✨</span>
+                    Open Your Surprise
+                    <span class="btn-sparkle">✨</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 1: TODAY IS YOUR DAY
+        ============================================================ -->
+        <section id="section-1" class="section birthday-section">
+            <div class="section-inner">
+                <div class="birthday-badge">🎂</div>
+                <h2 class="section-title elegant-title">Happy 24th Birthday, Diya!</h2>
+                <p class="birthday-date">29 August 2026</p>
+                <div class="elegant-divider"></div>
+                <p class="birthday-message">
+                    Today isn't just another day.
+                </p>
+                <p class="birthday-message delay-1">
+                    It's the day someone very special<br>
+                    came into this world...
+                </p>
+                <p class="birthday-message delay-2">
+                    and somehow,<br>
+                    my life became more beautiful<br>
+                    because you are in it.
+                </p>
+                <div class="confetti-container" id="birthdayConfetti"></div>
+                <button id="toStoryBtn" class="btn-romantic delay-3">
+                    Continue <span class="arrow">→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 2: OUR LITTLE STORY (Photo Chapters)
+        ============================================================ -->
+        <section id="section-2" class="section story-section">
+            <div class="section-inner story-inner">
+                <h2 class="section-title elegant-title">Our Little Story</h2>
+                <p class="section-subtitle">📸 A few chapters from our journey together</p>
+
+                <!-- Chapter 01 -->
+                <div class="story-chapter" id="chapter1">
+                    <div class="chapter-label">Chapter 01</div>
+                    <h3 class="chapter-title">When We Met</h3>
+                    <div class="chapter-photos">
+                        <div class="polaroid" data-photo="0"><img src="photos/photo_01.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="1"><img src="photos/photo_02.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="2"><img src="photos/photo_03.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="3"><img src="photos/photo_04.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="4"><img src="photos/photo_05.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                    </div>
+                    <p class="chapter-caption">
+                        "I didn't know then how many beautiful memories<br>
+                        would come after this moment."
+                    </p>
+                </div>
+
+                <!-- Chapter 02 -->
+                <div class="story-chapter" id="chapter2">
+                    <div class="chapter-label">Chapter 02</div>
+                    <h3 class="chapter-title">The Little Things</h3>
+                    <div class="chapter-photos">
+                        <div class="polaroid" data-photo="5"><img src="photos/photo_06.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="6"><img src="photos/photo_07.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="7"><img src="photos/photo_08.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="8"><img src="photos/photo_09.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="9"><img src="photos/photo_10.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="10"><img src="photos/photo_11.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="11"><img src="photos/photo_12.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                    </div>
+                    <p class="chapter-caption">
+                        "It's not always the big moments.<br>
+                        Sometimes it's your smile, your voice,<br>
+                        or simply having you beside me."
+                    </p>
+                </div>
+
+                <!-- Chapter 03 -->
+                <div class="story-chapter" id="chapter3">
+                    <div class="chapter-label">Chapter 03</div>
+                    <h3 class="chapter-title">Us ❤️</h3>
+                    <div class="chapter-photos">
+                        <div class="polaroid" data-photo="12"><img src="photos/photo_13.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="13"><img src="photos/photo_14.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="14"><img src="photos/photo_15.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="15"><img src="photos/photo_16.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="16"><img src="photos/photo_17.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="17"><img src="photos/photo_18.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="18"><img src="photos/photo_19.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="19"><img src="photos/photo_20.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                    </div>
+                    <p class="chapter-caption">
+                        "Somehow, ordinary days became my favorite days."
+                    </p>
+                </div>
+
+                <!-- Remaining photos gallery -->
+                <div class="story-chapter" id="chapter4">
+                    <div class="chapter-label">More Moments</div>
+                    <h3 class="chapter-title">Every Moment Matters 💕</h3>
+                    <div class="chapter-photos">
+                        <div class="polaroid" data-photo="20"><img src="photos/photo_21.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="21"><img src="photos/photo_22.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="22"><img src="photos/photo_23.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="23"><img src="photos/photo_24.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="24"><img src="photos/photo_25.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="25"><img src="photos/photo_26.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="26"><img src="photos/photo_27.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="27"><img src="photos/photo_28.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="28"><img src="photos/photo_29.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="29"><img src="photos/photo_30.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="30"><img src="photos/photo_31.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="31"><img src="photos/photo_32.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="32"><img src="photos/photo_33.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="33"><img src="photos/photo_34.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="34"><img src="photos/photo_35.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="35"><img src="photos/photo_36.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="36"><img src="photos/photo_37.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="37"><img src="photos/photo_38.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="38"><img src="photos/photo_39.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="39"><img src="photos/photo_40.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="40"><img src="photos/photo_41.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="41"><img src="photos/photo_42.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="42"><img src="photos/photo_43.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                        <div class="polaroid" data-photo="43"><img src="photos/photo_44.jpg" alt="Memory"><div class="polaroid-shadow"></div></div>
+                    </div>
+                </div>
+
+                <button id="toLoveBtn" class="btn-romantic">
+                    Continue <span class="arrow">→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 3: THINGS I LOVE ABOUT YOU (Interactive Cards)
+        ============================================================ -->
+        <section id="section-3" class="section love-section">
+            <div class="section-inner">
+                <h2 class="section-title elegant-title">Things I Love About You</h2>
+                <div class="elegant-divider"></div>
+
+                <div class="love-card-stack" id="loveCardStack">
+                    <div class="love-card active-card" data-index="0">
+                        <span class="love-emoji">🌸</span>
+                        <p class="love-text">Your Smile</p>
+                        <span class="tap-hint">tap for next →</span>
+                    </div>
+                    <div class="love-card" data-index="1">
+                        <span class="love-emoji">💕</span>
+                        <p class="love-text">Your Kind Heart</p>
+                        <span class="tap-hint">tap for next →</span>
+                    </div>
+                    <div class="love-card" data-index="2">
+                        <span class="love-emoji">😊</span>
+                        <p class="love-text">The Way You Make Me Laugh</p>
+                        <span class="tap-hint">tap for next →</span>
+                    </div>
+                    <div class="love-card" data-index="3">
+                        <span class="love-emoji">🫶</span>
+                        <p class="love-text">The Way You Care</p>
+                        <span class="tap-hint">tap for next →</span>
+                    </div>
+                    <div class="love-card" data-index="4">
+                        <span class="love-emoji">✨</span>
+                        <p class="love-text">Simply... You</p>
+                        <span class="tap-hint">tap to continue →</span>
+                    </div>
+                </div>
+
+                <p class="love-final hidden" id="loveFinal">
+                    I could keep going, but then this website would never end. 😄❤️
+                </p>
+
+                <button id="toLetterBtn" class="btn-romantic hidden">
+                    Continue <span class="arrow">→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 4: THE LETTER
+        ============================================================ -->
+        <section id="section-4" class="section letter-section">
+            <div class="section-inner">
+                <div class="envelope-container" id="envelopeContainer">
+                    <div class="envelope" id="envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-body">
+                            <span class="envelope-label">💌 A Letter For Diya</span>
+                        </div>
+                    </div>
+                    <button id="openLetterBtn" class="btn-romantic envelope-btn">
+                        Open Letter 💌
+                    </button>
+                </div>
+
+                <div class="letter-content hidden" id="letterContent">
+                    <div class="letter-paper">
+                        <p class="letter-line salutation">My Dear Diya,</p>
+                        <p class="letter-line">Happy Birthday, my love. ❤️</p>
+                        <p class="letter-line">I don't know if words can really explain how much you mean to me, but today I want to try.</p>
+                        <p class="letter-line">You are one of the most beautiful parts of my life — not only because of your smile or the way you look, but because of the person you are.</p>
+                        <p class="letter-line">I hope this new year of your life brings you happiness, peace, success, and countless reasons to smile.</p>
+                        <p class="letter-line">Whenever life becomes difficult, I hope you remember that you never have to face it alone.</p>
+                        <p class="letter-line">I will always be cheering for you, supporting you, and wishing the very best for you.</p>
+                        <p class="letter-line dua">May Allah bless you, protect you, and keep your heart happy. 🤍</p>
+                        <p class="letter-line">Happy Birthday, Diya.</p>
+                        <p class="letter-line closing">I love you. ❤️</p>
+                        <p class="letter-line signature">— Your Husband</p>
+                    </div>
+                    <button id="toSurpriseBtn" class="btn-romantic">
+                        Continue <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 5: ONE MORE SURPRISE (Gift Box)
+        ============================================================ -->
+        <section id="section-5" class="section surprise-section">
+            <div class="section-inner">
+                <p class="surprise-wait reveal-text">Wait...</p>
+                <p class="surprise-text reveal-text delay-1">I have one more surprise for you. 👀</p>
+
+                <div class="gift-box-wrapper" id="giftBoxWrapper">
+                    <div class="gift-box" id="giftBox">
+                        <div class="gift-lid">
+                            <div class="gift-bow"></div>
+                        </div>
+                        <div class="gift-body">
+                            <div class="gift-ribbon-v"></div>
+                            <div class="gift-ribbon-h"></div>
+                        </div>
+                    </div>
+                    <button id="openGiftBtn" class="btn-romantic gift-btn">
+                        🎁 OPEN
+                    </button>
+                </div>
+
+                <div class="gift-reveal hidden" id="giftReveal">
+                    <p class="gift-message">This gift isn't the most important thing...</p>
+                    <p class="gift-message delay-1">
+                        Because the best thing I could give you<br>
+                        is every beautiful moment we haven't lived yet.
+                    </p>
+                    <div class="gift-points">
+                        <span class="gift-point">More memories.</span>
+                        <span class="gift-point">More laughter.</span>
+                        <span class="gift-point">More adventures.</span>
+                        <span class="gift-point">More us. ❤️</span>
+                    </div>
+                    <button id="toFutureBtn" class="btn-romantic">
+                        Continue <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 6: OUR FUTURE
+        ============================================================ -->
+        <section id="section-6" class="section future-section">
+            <div class="section-inner">
+                <h2 class="section-title elegant-title">Our Future</h2>
+                <div class="elegant-divider"></div>
+                <p class="future-intro">
+                    There are still so many chapters<br>
+                    we haven't written yet...
+                </p>
+                <div class="future-list">
+                    <div class="future-item"><span class="future-icon">🌍</span> More places to visit</div>
+                    <div class="future-item"><span class="future-icon">🍰</span> More food to try</div>
+                    <div class="future-item"><span class="future-icon">📸</span> More photos to take</div>
+                    <div class="future-item"><span class="future-icon">😂</span> More silly moments</div>
+                    <div class="future-item"><span class="future-icon">✨</span> More dreams to chase</div>
+                    <div class="future-item"><span class="future-icon">🎂</span> More birthdays to celebrate</div>
+                </div>
+                <p class="future-ending">
+                    And hopefully...<br><br>
+                    <span class="future-highlight">many, many more moments together. ❤️</span>
+                </p>
+                <button id="toWishBtn" class="btn-romantic">
+                    Continue <span class="arrow">→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 7: MAKE A WISH (Birthday Cake)
+        ============================================================ -->
+        <section id="section-7" class="section wish-section">
+            <div class="section-inner">
+                <p class="wish-before">Before you leave...</p>
+                <p class="wish-instruction">Close your eyes.</p>
+                <p class="wish-instruction delay-1">Make a wish. ✨</p>
+                <p class="wish-instruction delay-2">And when you're ready,<br>blow out the candles.</p>
+
+                <div class="cake-container" id="cakeContainer">
+                    <div class="candles-row" id="candlesRow">
+                        <!-- Candles generated by JS -->
+                    </div>
+                    <div class="cake-tier cake-top">
+                        <div class="cake-frosting"></div>
+                        <span class="cake-text">DIYA</span>
+                    </div>
+                    <div class="cake-tier cake-bottom">
+                        <div class="cake-frosting"></div>
+                        <span class="cake-text">24 ❤️</span>
+                    </div>
+                    <div class="cake-plate"></div>
+                </div>
+
+                <button id="blowCandlesBtn" class="btn-romantic">
+                    🌬️ Blow the Candles
+                </button>
+
+                <div class="wish-result hidden" id="wishResult">
+                    <h2 class="wish-hbd">🎂 Happy 24th Birthday, Diya! ❤️</h2>
+                    <p class="wish-may">May your wish come true.</p>
+                    <button id="toFinaleBtn" class="btn-romantic">
+                        Continue <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 8: FINAL SCREEN
+        ============================================================ -->
+        <section id="section-8" class="section finale-section">
+            <div class="section-inner finale-inner">
+                <div class="finale-line"></div>
+                <h2 class="finale-name">Diya <span class="finale-heart">❤️</span></h2>
+                <p class="finale-text">Thank you for being you.</p>
+                <p class="finale-text">Happy 24th Birthday, my love.</p>
+                <p class="finale-date">29 • 08 • 2026</p>
+                <p class="finale-grateful">Forever grateful for you. 🤍</p>
+                <p class="finale-signature">— Your Husband</p>
+                <div class="finale-line"></div>
+                <div class="finale-hearts">
+                    <span>❤️</span>
+                    <span>❤️</span>
+                    <span>❤️</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Photo Lightbox -->
+    <div id="photoLightbox" class="lightbox hidden">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-inner">
+            <button id="closeLightbox" class="lightbox-close">✕</button>
+            <img id="lightboxImg" src="" alt="Memory">
+            <div class="lightbox-nav">
+                <button id="lightboxPrev" class="lightbox-arrow">‹</button>
+                <span id="lightboxCounter">1 / 44</span>
+                <button id="lightboxNext" class="lightbox-arrow">›</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="audio.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
