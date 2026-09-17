@@ -18,6 +18,25 @@
     <canvas id="confetti-canvas"></canvas>
 
     <!-- ═══════════════════════════════════════════ -->
+    <!-- BACKGROUND MUSIC & FLOATING CONTROLLER     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="Meow/happy_birthday.mp3" type="audio/mpeg">
+        <source src="Meow/happy_birthday.ogg" type="audio/ogg">
+    </audio>
+
+    <div class="bg-music-player paused" id="bg-music-toggle" title="Click to Play/Pause Birthday Music" aria-label="Toggle Birthday Music">
+        <div class="music-disc-icon">🎵</div>
+        <div class="music-waves">
+            <span class="music-wave-bar"></span>
+            <span class="music-wave-bar"></span>
+            <span class="music-wave-bar"></span>
+            <span class="music-wave-bar"></span>
+        </div>
+        <span class="music-label" id="music-status-text">Play Music 🎶</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
     <!-- FLOATING POKEMON BACKGROUND                 -->
     <!-- ═══════════════════════════════════════════ -->
     <div class="pokemon-bg" id="pokemon-bg">
@@ -827,6 +846,6 @@
         <img class="lightbox-img" id="lightbox-img" alt="Full size image">
     </div>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

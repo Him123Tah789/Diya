@@ -48,6 +48,91 @@ document.addEventListener('DOMContentLoaded', () => {
     const pokemonImages  = document.querySelectorAll('.floating-pokemon');
 
     /* ================================================================
+       BACKGROUND MUSIC CONTROLLER
+       ================================================================ */
+    const bgMusic         = document.getElementById('bg-music');
+    const musicToggle     = document.getElementById('bg-music-toggle');
+    const musicStatusText = document.getElementById('music-status-text');
+    let isMusicPlaying    = false;
+    let userMuted         = false;
+
+    function playBgMusic() {
+        if (!bgMusic || userMuted) return;
+        bgMusic.volume = 0.45;
+        const p = bgMusic.play();
+        if (p !== undefined) {
+            p.then(() => {
+                isMusicPlaying = true;
+                if (musicToggle) {
+                    musicToggle.classList.add('playing');
+                    musicToggle.classList.remove('paused');
+                }
+                if (musicStatusText) musicStatusText.textContent = "Birthday Music 🎵";
+            }).catch(() => {
+                isMusicPlaying = false;
+            });
+        }
+    }
+
+    function pauseBgMusic() {
+        if (!bgMusic) return;
+        bgMusic.pause();
+        isMusicPlaying = false;
+        if (musicToggle) {
+            musicToggle.classList.remove('playing');
+            musicToggle.classList.add('paused');
+        }
+        if (musicStatusText) musicStatusText.textContent = "Music Paused ⏸️";
+    }
+
+    function toggleBgMusic() {
+        if (isMusicPlaying) {
+            userMuted = true;
+            pauseBgMusic();
+        } else {
+            userMuted = false;
+            playBgMusic();
+        }
+    }
+
+    if (musicToggle) {
+        musicToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleBgMusic();
+        });
+    }
+
+    // Auto-start music on first user interaction anywhere on the page
+    function autoStartMusicOnInteraction() {
+        if (!isMusicPlaying && !userMuted) {
+            playBgMusic();
+        }
+    }
+    document.addEventListener('click', autoStartMusicOnInteraction, { once: true });
+    document.addEventListener('touchstart', autoStartMusicOnInteraction, { once: true });
+    document.addEventListener('keydown', autoStartMusicOnInteraction, { once: true });
+
+    // Duck music when any video plays
+    const allVideos = document.querySelectorAll('video');
+    allVideos.forEach(vid => {
+        vid.addEventListener('play', () => {
+            if (bgMusic && isMusicPlaying) {
+                bgMusic.volume = 0.08;
+            }
+        });
+        vid.addEventListener('pause', () => {
+            if (bgMusic && isMusicPlaying && !userMuted) {
+                bgMusic.volume = 0.45;
+            }
+        });
+        vid.addEventListener('ended', () => {
+            if (bgMusic && isMusicPlaying && !userMuted) {
+                bgMusic.volume = 0.45;
+            }
+        });
+    });
+
+    /* ================================================================
        PARTICLE SYSTEM - glowing stars
        ================================================================ */
     let particles = [];

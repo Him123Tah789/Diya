@@ -2016,8 +2016,95 @@ body {
 .floating-emoji { position: fixed; font-size: 1.5rem; pointer-events: none; z-index: 99; animation: floatUp 4s ease-out forwards; }
 @keyframes floatUp { 0%{opacity:1;transform:translateY(0) scale(1) rotate(0deg)} 100%{opacity:0;transform:translateY(-100vh) scale(0.5) rotate(360deg)} }
 
+/* --- Floating Music Controller --- */
+.bg-music-player {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(26, 11, 46, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1.5px solid rgba(255, 215, 0, 0.45);
+    padding: 8px 18px;
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(75, 0, 130, 0.45), 0 0 20px rgba(255, 215, 0, 0.2);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s var(--ease-out-back);
+}
+.bg-music-player:hover {
+    transform: scale(1.06) translateY(-2px);
+    border-color: var(--gold-bright);
+    box-shadow: 0 12px 40px rgba(179, 136, 255, 0.55), 0 0 35px rgba(255, 215, 0, 0.4);
+}
+.music-disc-icon {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    transition: transform 0.3s ease;
+}
+.bg-music-player.playing .music-disc-icon {
+    animation: discSpin 4s linear infinite;
+}
+@keyframes discSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.music-waves {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 16px;
+}
+.music-wave-bar {
+    width: 3px;
+    height: 4px;
+    background: var(--gold-bright);
+    border-radius: 2px;
+    transition: height 0.2s ease;
+}
+.bg-music-player.playing .music-wave-bar:nth-child(1) { animation: waveBounce 0.8s ease-in-out infinite; }
+.bg-music-player.playing .music-wave-bar:nth-child(2) { animation: waveBounce 1.1s ease-in-out infinite 0.2s; }
+.bg-music-player.playing .music-wave-bar:nth-child(3) { animation: waveBounce 0.7s ease-in-out infinite 0.4s; }
+.bg-music-player.playing .music-wave-bar:nth-child(4) { animation: waveBounce 0.9s ease-in-out infinite 0.1s; }
+@keyframes waveBounce {
+    0%, 100% { height: 4px; }
+    50% { height: 16px; }
+}
+.music-label {
+    font-family: var(--font-fun);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+.bg-music-player.playing .music-label {
+    color: var(--gold-bright);
+}
+.bg-music-player.paused .music-wave-bar {
+    height: 4px;
+    opacity: 0.5;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
+    .bg-music-player {
+        top: 14px;
+        right: 14px;
+        padding: 6px 12px;
+    }
+    .music-label {
+        font-size: 0.78rem;
+    }
+
     .polaroid-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
     .poster-showcase { grid-template-columns: 1fr; }
     .video-grid { grid-template-columns: 1fr; }
