@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
     <!-- ═══════════════════════════════════════════ -->
@@ -347,6 +347,14 @@
                     </div>
                     <p class="video-label">💜 A Special Birthday Video for Meow</p>
                 </div>
+                <div class="video-card scroll-reveal" data-delay="450">
+                    <div class="video-wrapper">
+                        <video controls preload="metadata" poster="Pokemon/188987.png">
+                            <source src="Meow/in_pokemon_every_pets_are_whis.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p class="video-label">🐾 All Pokémon Pets Wishing Happy 19th Birthday!</p>
+                </div>
             </div>
         </section>
 
@@ -614,6 +622,29 @@
             </div>
         </div>
 
+        <!-- 🎬 SCENE 2.5 — ALL POKÉMON PETS WISHING VIDEO -->
+        <div class="uf-scene uf-scene-pets-video" id="uf-scene-pets-video">
+            <div class="uf-content">
+                <div class="uf-pets-video-header">
+                    <span class="uf-pets-badge">✨ A Special Surprise From Your Pokémon Friends ✨</span>
+                    <h2 class="uf-pets-title">All Your Pokémon Pets Are Wishing You! 🌻💜</h2>
+                </div>
+
+                <div class="uf-pets-video-frame glass-card">
+                    <video id="uf-pets-video" preload="auto" playsinline webkit-playsinline controls poster="Pokemon/188987.png">
+                        <source src="Meow/in_pokemon_every_pets_are_whis.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="uf-pets-video-actions">
+                    <button class="uf-btn-gold" id="uf-btn-continue-to-cake">
+                        <span>Blow The 19 Candles & Make Wishes 🎂✨</span>
+                    </button>
+                    <p class="uf-pets-hint">Click above to step up to the 19 birthday cake 🕯️</p>
+                </div>
+            </div>
+        </div>
+
         <!-- 🎂 SCENE 3 — 19 WISHES FOR MEOW WITH HUGE CAKE -->
         <div class="uf-scene uf-scene-3" id="uf-scene-3">
             <div class="uf-content uf-wishes-content">
@@ -846,6 +877,6 @@
         <img class="lightbox-img" id="lightbox-img" alt="Full size image">
     </div>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>

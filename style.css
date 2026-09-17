@@ -1193,6 +1193,65 @@ body {
     50% { transform: scale(1.15); }
 }
 
+/* --- SCENE 2.5: Pokémon Pets Wishing Video --- */
+.uf-scene-pets-video {
+    background: radial-gradient(ellipse at 50% 40%, #20053b 0%, #06010f 85%);
+    justify-content: center;
+    padding: 30px 20px;
+}
+.uf-pets-video-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+.uf-pets-badge {
+    display: inline-block;
+    font-family: var(--font-fun);
+    font-size: 0.9rem;
+    color: var(--gold-bright);
+    letter-spacing: 1.5px;
+    background: rgba(255, 215, 0, 0.15);
+    padding: 6px 18px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    margin-bottom: 10px;
+}
+.uf-pets-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+    color: #fff;
+    background: linear-gradient(135deg, #fff 0%, var(--lavender) 50%, var(--gold-bright) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.3;
+}
+.uf-pets-video-frame {
+    max-width: 660px;
+    width: 100%;
+    margin: 0 auto 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 12px 50px rgba(75, 0, 130, 0.6), 0 0 45px rgba(255, 215, 0, 0.25);
+    background: #000;
+}
+.uf-pets-video-frame video {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 52vh;
+}
+.uf-pets-video-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.uf-pets-hint {
+    font-size: 0.88rem;
+    color: var(--white-70);
+    text-align: center;
+}
+
 /* --- SCENE 3: 18 Wishes for Meow --- */
 .uf-scene-3 {
     background: radial-gradient(ellipse at 50% 30%, #2a0d4a 0%, #090214 75%);

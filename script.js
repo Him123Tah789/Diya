@@ -575,11 +575,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scenes
     const ufScene1        = document.getElementById('uf-scene-1');
     const ufScene2        = document.getElementById('uf-scene-2');
+    const ufScenePetsVideo = document.getElementById('uf-scene-pets-video');
     const ufScene3        = document.getElementById('uf-scene-3');
     const ufScene4        = document.getElementById('uf-scene-4');
     const ufScene5        = document.getElementById('uf-scene-5');
     const ufScene6        = document.getElementById('uf-scene-6');
     const ufScene7        = document.getElementById('uf-scene-7');
+
+    // Scene 2.5 elements
+    const ufPetsVideo       = document.getElementById('uf-pets-video');
+    const ufBtnContinueCake = document.getElementById('uf-btn-continue-to-cake');
 
     // Scene 1 elements
     const ufTextSurprise  = document.getElementById('uf-text-surprise');
@@ -826,6 +831,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let ufPokeballOpened = false;
 
     function startScene1() {
+        if (ufPetsVideo) {
+            ufPetsVideo.pause();
+            ufPetsVideo.currentTime = 0;
+            ufPetsVideo.onended = null;
+        }
         switchUfScene(ufScene1);
         ufPokeballOpened = false;
         ufPokeball.classList.remove('shake', 'open');
@@ -918,11 +928,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 ufFlash.classList.remove('flash');
             }, 400);
 
-            // Transition to Scene 3 (Cake + Wishes)
+            // Transition to Scene 2.5: Pokémon Pets Wishing Video (before the 19 birthday cake)
             setTimeout(() => {
-                startScene3();
+                startPetsVideoScene();
             }, 600);
         }, 1500);
+    }
+
+    // --- SCENE 2.5 Controller (All Pokémon Pets Wishing Video) ---
+    let transitionedToCake = false;
+
+    function startPetsVideoScene() {
+        transitionedToCake = false;
+        switchUfScene(ufScenePetsVideo);
+
+        if (ufPetsVideo) {
+            ufPetsVideo.currentTime = 0;
+            // Duck background music while video plays
+            if (bgMusic && isMusicPlaying) {
+                bgMusic.volume = 0.08;
+            }
+            const p = ufPetsVideo.play();
+            if (p !== undefined) {
+                p.catch(err => {
+                    console.log('Pets video autoplay deferred:', err);
+                });
+            }
+
+            ufPetsVideo.onended = () => {
+                goToCakeScene();
+            };
+        }
+    }
+
+    function goToCakeScene() {
+        if (transitionedToCake) return;
+        transitionedToCake = true;
+
+        if (ufPetsVideo) {
+            ufPetsVideo.pause();
+            ufPetsVideo.onended = null;
+        }
+
+        // Restore background music
+        if (bgMusic && isMusicPlaying && !userMuted) {
+            bgMusic.volume = 0.45;
+        }
+
+        // Sunflowers & sparkles burst when stepping up to the 19 birthday cake!
+        triggerUfBurst();
+        playFanfare();
+        startScene3();
+    }
+
+    if (ufBtnContinueCake) {
+        ufBtnContinueCake.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToCakeScene();
+        });
     }
 
     // --- SCENE 3 Controller (19 Wishes for Meow) ---
